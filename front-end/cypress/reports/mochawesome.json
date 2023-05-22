@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-02-01T18:02:06.037Z",
+    "end": "2023-02-01T18:03:16.792Z",
+    "duration": 70755,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "54cb51f3-96e5-4ad0-9745-262c3558acb0",
+      "title": "",
+      "fullFile": "cypress/e2e/01.coverage.cy.js",
+      "file": "cypress/e2e/01.coverage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7b6bbb39-2220-4217-a984-1a2e54c2afc2",
+          "title": "1 - Desenvolva os testes unitários de maneira que a cobertura seja de, no mínimo, 90%",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verifica a cobertura de 90% da aplicação total",
+              "fullTitle": "1 - Desenvolva os testes unitários de maneira que a cobertura seja de, no mínimo, 90% Verifica a cobertura de 90% da aplicação total",
+              "timedOut": null,
+              "duration": 61464,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', getId()).its('total.branches.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);",
+              "err": {
+                "message": "CypressError: `cy.task('getCoverage')` timed out after waiting `60000ms`.\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('getCoverage')` timed out after waiting `60000ms`.\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:43847/__cypress/runner/cypress_runner.js:145876:78)\n    at tryCatcher (http://localhost:43847/__cypress/runner/cypress_runner.js:11318:23)\n    at <unknown> (http://localhost:43847/__cypress/runner/cypress_runner.js:6440:41)\n    at tryCatcher (http://localhost:43847/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (http://localhost:43847/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (http://localhost:43847/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (http://localhost:43847/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (http://localhost:43847/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (http://localhost:43847/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (http://localhost:43847/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:43847/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (http://localhost:43847/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/01.coverage.cy.js:7:7)",
+                "diff": null
+              },
+              "uuid": "e8a5fd4b-24ef-44a3-a10a-426232dffc0c",
+              "parentUUID": "7b6bbb39-2220-4217-a984-1a2e54c2afc2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "e8a5fd4b-24ef-44a3-a10a-426232dffc0c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 61464,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

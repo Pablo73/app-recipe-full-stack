@@ -1,0 +1,43 @@
+* {
+  font-family: Montserrat , sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background-color: var(--secondary-bg-color);
+}
+
+/*
+#iceLeft {
+  animation: clink .8s infinite ease;
+  opacity: 0.6;
+  transform-origin: 36px 66px;
+}
+
+#iceRight {
+  animation: clink .8s .2s infinite ease;
+  opacity: 0.6;
+  transform-origin: 60px 78px;
+}
+*/
+
+input {
+  background-color: var(--primary-bg-color);
+  border: 0;
+  border-radius: 4px;
+  padding: 6px 8px;
+}
+
+input::placeholder {
+  color: var(--earthy);
+  font-family: Montserrat , sans-serif;
+  font-weight: 600;
+}
+
+@import url('./assets/css/Colors.css') ;
+
+@import url('./assets/css/Login.css') ;
+
+@import url('./assets/css/Button.css') ;
+

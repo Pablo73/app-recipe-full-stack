@@ -1,0 +1,528 @@
+{
+  "stats": {
+    "suites": 6,
+    "tests": 17,
+    "passes": 13,
+    "pending": 0,
+    "failures": 4,
+    "start": "2023-02-01T18:05:18.484Z",
+    "end": "2023-02-01T18:05:49.274Z",
+    "duration": 30790,
+    "testsRegistered": 17,
+    "passPercent": 76.47058823529412,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dd77b0a8-dcf2-4263-b23f-1996db59848f",
+      "title": "",
+      "fullFile": "cypress/e2e/10-15.header_search_bar.cy.js",
+      "file": "cypress/e2e/10-15.header_search_bar.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0a84c20d-be64-413b-abc0-1c59362b7f1c",
+          "title": "10 - Implemente os elementos da barra de busca respeitando os atributos descritos no protótipo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Tem os data-testids tanto da barra de busca quanto de todos os radio-buttons",
+              "fullTitle": "10 - Implemente os elementos da barra de busca respeitando os atributos descritos no protótipo Tem os data-testids tanto da barra de busca quanto de todos os radio-buttons",
+              "timedOut": null,
+              "duration": 857,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/meals');\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"search-input\"]');\ncy.get('[data-testid=\"ingredient-search-radio\"]');\ncy.get('[data-testid=\"name-search-radio\"]');\ncy.get('[data-testid=\"first-letter-search-radio\"]');\ncy.get('[data-testid=\"exec-search-btn\"]');",
+              "err": {},
+              "uuid": "7803d9ac-220b-4efe-be80-5f9056f8c45b",
+              "parentUUID": "0a84c20d-be64-413b-abc0-1c59362b7f1c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7803d9ac-220b-4efe-be80-5f9056f8c45b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 857,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "1176b1a1-45b0-4902-91e8-ffd98ef9859d",
+          "title": "11 - Implemente 3 radio buttons na barra de busca: Ingredient, Name e First letter",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Se o radio selecionado for Ingredient, a busca na API é feita corretamente pelo ingrediente",
+              "fullTitle": "11 - Implemente 3 radio buttons na barra de busca: Ingredient, Name e First letter Se o radio selecionado for Ingredient, a busca na API é feita corretamente pelo ingrediente",
+              "timedOut": null,
+              "duration": 1141,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/meals', {\n  onBeforeLoad(win) {\n    cy.spy(win, 'fetch');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"ingredient-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('chicken');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('fetch').should('be.calledWith', 'https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken');",
+              "err": {},
+              "uuid": "128eafe5-cf6d-40eb-9eea-2524c2dbfba0",
+              "parentUUID": "1176b1a1-45b0-4902-91e8-ffd98ef9859d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Se o radio selecionado for Name, a busca na API é feita corretamente pelo nome",
+              "fullTitle": "11 - Implemente 3 radio buttons na barra de busca: Ingredient, Name e First letter Se o radio selecionado for Name, a busca na API é feita corretamente pelo nome",
+              "timedOut": null,
+              "duration": 1001,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/meals', {\n  onBeforeLoad(win) {\n    cy.spy(win, 'fetch');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('soup');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('fetch').should('be.calledWith', 'https://www.themealdb.com/api/json/v1/1/search.php?s=soup');",
+              "err": {},
+              "uuid": "eba8d68f-b0f0-4b73-a362-7f9cd84a411f",
+              "parentUUID": "1176b1a1-45b0-4902-91e8-ffd98ef9859d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Se o radio selecionado for First letter, a busca na API é feita corretamente pelo primeira letra",
+              "fullTitle": "11 - Implemente 3 radio buttons na barra de busca: Ingredient, Name e First letter Se o radio selecionado for First letter, a busca na API é feita corretamente pelo primeira letra",
+              "timedOut": null,
+              "duration": 766,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/meals', {\n  onBeforeLoad(win) {\n    cy.spy(win, 'fetch');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"first-letter-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('a');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('fetch').should('be.calledWith', 'https://www.themealdb.com/api/json/v1/1/search.php?f=a');",
+              "err": {},
+              "uuid": "d09dea70-3ed3-4b88-9ffa-fa704d59098c",
+              "parentUUID": "1176b1a1-45b0-4902-91e8-ffd98ef9859d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Se o radio selecionado for First letter e a busca na API for feita com mais de uma letra, deve-se exibir um alert",
+              "fullTitle": "11 - Implemente 3 radio buttons na barra de busca: Ingredient, Name e First letter Se o radio selecionado for First letter e a busca na API for feita com mais de uma letra, deve-se exibir um alert",
+              "timedOut": null,
+              "duration": 995,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/meals', {\n  onBeforeLoad(win) {\n    cy.spy(win, 'alert');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"first-letter-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('aaa');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('alert').should('be.calledWith', 'Your search must have only 1 (one) character');",
+              "err": {},
+              "uuid": "a740dc09-70f1-4dc0-af6b-5cff7515fe78",
+              "parentUUID": "1176b1a1-45b0-4902-91e8-ffd98ef9859d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "128eafe5-cf6d-40eb-9eea-2524c2dbfba0",
+            "eba8d68f-b0f0-4b73-a362-7f9cd84a411f",
+            "d09dea70-3ed3-4b88-9ffa-fa704d59098c",
+            "a740dc09-70f1-4dc0-af6b-5cff7515fe78"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3903,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "a984f3cb-07ec-475b-b510-889b2fd319b0",
+          "title": "12 - Busque na API de comidas caso a pessoa esteja na página de comidas, e na API de bebidas caso esteja na de bebidas",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Na tela de bebidas, se o radio selecionado for Ingredient, a busca na API é feita corretamente pelo ingrediente",
+              "fullTitle": "12 - Busque na API de comidas caso a pessoa esteja na página de comidas, e na API de bebidas caso esteja na de bebidas Na tela de bebidas, se o radio selecionado for Ingredient, a busca na API é feita corretamente pelo ingrediente",
+              "timedOut": null,
+              "duration": 737,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/drinks', {\n  onBeforeLoad(win) {\n    cy.spy(win, 'fetch');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"ingredient-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('lemon');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('fetch').should('be.calledWith', 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=lemon');",
+              "err": {},
+              "uuid": "981c383d-bc7e-4d7d-bbd8-2514b2be5250",
+              "parentUUID": "a984f3cb-07ec-475b-b510-889b2fd319b0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Na tela de bebidas, se o radio selecionado for Name, a busca na API é feita corretamente pelo nome",
+              "fullTitle": "12 - Busque na API de comidas caso a pessoa esteja na página de comidas, e na API de bebidas caso esteja na de bebidas Na tela de bebidas, se o radio selecionado for Name, a busca na API é feita corretamente pelo nome",
+              "timedOut": null,
+              "duration": 709,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/drinks', {\n  onBeforeLoad(win) {\n    cy.spy(win, 'fetch');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('gin');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('fetch').should('be.calledWith', 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=gin');",
+              "err": {},
+              "uuid": "6c8886c9-d422-4661-8f78-ce766285f9f9",
+              "parentUUID": "a984f3cb-07ec-475b-b510-889b2fd319b0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Na tela de bebidas, se o radio selecionado for First letter, a busca na API é feita corretamente pelo primeira letra",
+              "fullTitle": "12 - Busque na API de comidas caso a pessoa esteja na página de comidas, e na API de bebidas caso esteja na de bebidas Na tela de bebidas, se o radio selecionado for First letter, a busca na API é feita corretamente pelo primeira letra",
+              "timedOut": null,
+              "duration": 632,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/drinks', {\n  onBeforeLoad(win) {\n    cy.spy(win, 'fetch');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"first-letter-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('a');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('fetch').should('be.calledWith', 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a');",
+              "err": {},
+              "uuid": "829ef648-fd5b-4d16-8410-bf78c4142091",
+              "parentUUID": "a984f3cb-07ec-475b-b510-889b2fd319b0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Na tela de bebidas, se o radio selecionado for First letter e a busca na API for feita com mais de uma letra, deve-se exibir um alert",
+              "fullTitle": "12 - Busque na API de comidas caso a pessoa esteja na página de comidas, e na API de bebidas caso esteja na de bebidas Na tela de bebidas, se o radio selecionado for First letter e a busca na API for feita com mais de uma letra, deve-se exibir um alert",
+              "timedOut": null,
+              "duration": 627,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/drinks', {\n  onBeforeLoad(win) {\n    cy.spy(win, 'alert');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"first-letter-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('aaa');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('alert').should('be.calledWith', 'Your search must have only 1 (one) character');",
+              "err": {},
+              "uuid": "5830f15e-c0b6-4533-9f31-38002064ce2b",
+              "parentUUID": "a984f3cb-07ec-475b-b510-889b2fd319b0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verifica a cobertura de 45% do Componente SearchBar",
+              "fullTitle": "12 - Busque na API de comidas caso a pessoa esteja na página de comidas, e na API de bebidas caso esteja na de bebidas Verifica a cobertura de 45% do Componente SearchBar",
+              "timedOut": null,
+              "duration": 7892,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', getId()).its('SearchBar.functions.pct', {\n  timeout: 0\n}).should('be.gte', 45.00);\ncy.task('getCoverage', getId()).its('SearchBar.lines.pct', {\n  timeout: 0\n}).should('be.gte', 45.00);\ncy.task('getCoverage', getId()).its('SearchBar.branches.pct', {\n  timeout: 0\n}).should('be.gte', 45.00);",
+              "err": {
+                "message": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> stderr maxBuffer length exceeded\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> stderr maxBuffer length exceeded\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:145912:78)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/10-15.header_search_bar.cy.js:154:7)\n\nFrom Node.js Internals:\n  RangeError: stderr maxBuffer length exceeded\n  RangeError [ERR_CHILD_PROCESS_STDIO_MAXBUFFER]: stderr maxBuffer length exceeded\n      at new NodeError (node:internal/errors:387:5)\n      at Socket.onChildStderr (node:child_process:497:14)\n      at Socket.emit (node:events:513:28)\n      at Socket.emit (node:domain:489:12)\n      at addChunk (node:internal/streams/readable:315:12)\n      at readableAddChunk (node:internal/streams/readable:285:11)\n      at Socket.Readable.push (node:internal/streams/readable:228:10)\n      at Pipe.onStreamRead (node:internal/stream_base_commons:190:23)",
+                "diff": null
+              },
+              "uuid": "f0caad5b-f878-4806-a54b-204440c1ec96",
+              "parentUUID": "a984f3cb-07ec-475b-b510-889b2fd319b0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "981c383d-bc7e-4d7d-bbd8-2514b2be5250",
+            "6c8886c9-d422-4661-8f78-ce766285f9f9",
+            "829ef648-fd5b-4d16-8410-bf78c4142091",
+            "5830f15e-c0b6-4533-9f31-38002064ce2b"
+          ],
+          "failures": [
+            "f0caad5b-f878-4806-a54b-204440c1ec96"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10597,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "1c709968-1718-4f31-8450-f625711a8c72",
+          "title": "13 - Redirecione para a tela de detalhes da receita caso apenas uma receita seja encontrada, com o ID da mesma na URL",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso apenas uma comida seja encontrada, deve-se ir para sua rota de detalhes",
+              "fullTitle": "13 - Redirecione para a tela de detalhes da receita caso apenas uma receita seja encontrada, com o ID da mesma na URL Caso apenas uma comida seja encontrada, deve-se ir para sua rota de detalhes",
+              "timedOut": null,
+              "duration": 1138,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/meals', {\n  onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('Arrabiata');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.location().should(loc => expect(loc.pathname).to.eq('/meals/52771'));",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of undefined (reading '0')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of undefined (reading '0')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at Recommendations (http://localhost:3000/static/js/bundle.js:1749:30)\n    at renderWithHooks (http://localhost:3000/static/js/bundle.js:29802:22)\n    at mountIndeterminateComponent (http://localhost:3000/static/js/bundle.js:33088:17)\n    at beginWork (http://localhost:3000/static/js/bundle.js:34384:20)\n    at HTMLUnknownElement.callCallback (http://localhost:3000/static/js/bundle.js:19394:18)\n    at Object.invokeGuardedCallbackDev (http://localhost:3000/static/js/bundle.js:19438:20)\n    at invokeGuardedCallback (http://localhost:3000/static/js/bundle.js:19495:35)\n    at beginWork$1 (http://localhost:3000/static/js/bundle.js:39369:11)\n    at performUnitOfWork (http://localhost:3000/static/js/bundle.js:38616:16)\n    at workLoopSync (http://localhost:3000/static/js/bundle.js:38539:9)",
+                "diff": null
+              },
+              "uuid": "6d3f4f9e-3a32-473c-8d5f-368fd7f12320",
+              "parentUUID": "1c709968-1718-4f31-8450-f625711a8c72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso apenas uma bebida seja encontrada, deve-se ir para sua rota de detalhes",
+              "fullTitle": "13 - Redirecione para a tela de detalhes da receita caso apenas uma receita seja encontrada, com o ID da mesma na URL Caso apenas uma bebida seja encontrada, deve-se ir para sua rota de detalhes",
+              "timedOut": null,
+              "duration": 1030,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/drinks', {\n  onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('Aquamarine');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.location().should(loc => expect(loc.pathname).to.eq('/drinks/178319'));",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of undefined (reading '0')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of undefined (reading '0')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at Recommendations (http://localhost:3000/static/js/bundle.js:1749:30)\n    at renderWithHooks (http://localhost:3000/static/js/bundle.js:29802:22)\n    at mountIndeterminateComponent (http://localhost:3000/static/js/bundle.js:33088:17)\n    at beginWork (http://localhost:3000/static/js/bundle.js:34384:20)\n    at HTMLUnknownElement.callCallback (http://localhost:3000/static/js/bundle.js:19394:18)\n    at Object.invokeGuardedCallbackDev (http://localhost:3000/static/js/bundle.js:19438:20)\n    at invokeGuardedCallback (http://localhost:3000/static/js/bundle.js:19495:35)\n    at beginWork$1 (http://localhost:3000/static/js/bundle.js:39369:11)\n    at performUnitOfWork (http://localhost:3000/static/js/bundle.js:38616:16)\n    at workLoopSync (http://localhost:3000/static/js/bundle.js:38539:9)",
+                "diff": null
+              },
+              "uuid": "464522df-c891-4858-8a3e-4dbcc11df0b6",
+              "parentUUID": "1c709968-1718-4f31-8450-f625711a8c72",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "6d3f4f9e-3a32-473c-8d5f-368fd7f12320",
+            "464522df-c891-4858-8a3e-4dbcc11df0b6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2168,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "bd6c5581-525c-4931-958b-0dd9e00b4f2f",
+          "title": "14 - Caso a busca retorne mais de uma receita, renderize as 12 primeiras encontradas, exibindo a imagem e o nome de cada uma",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso mais de uma comida seja encontrada, mostrar as 12 primeiras",
+              "fullTitle": "14 - Caso a busca retorne mais de uma receita, renderize as 12 primeiras encontradas, exibindo a imagem e o nome de cada uma Caso mais de uma comida seja encontrada, mostrar as 12 primeiras",
+              "timedOut": null,
+              "duration": 1063,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/meals', {\n  onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('soup');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\nsoupMeals.meals.forEach((meal, index) => {\n  cy.get(`[data-testid=\"${index}-recipe-card\"]`);\n  cy.get(`[data-testid=\"${index}-card-img\"]`).should('have.attr', 'src').should('include', meal['strMealThumb']);\n  cy.get(`[data-testid=\"${index}-card-name\"]`).contains(meal['strMeal']);\n});\ncy.get('[data-testid=\"10-recipe-card\"]').should('not.exist');\ncy.get('[data-testid=\"10-card-img\"]').should('not.exist');\ncy.get('[data-testid=\"10-card-name\"]').should('not.exist');",
+              "err": {},
+              "uuid": "94398e06-d23b-48b9-8fc5-1a4c9a181b21",
+              "parentUUID": "bd6c5581-525c-4931-958b-0dd9e00b4f2f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso mais de uma bebida seja encontrada, mostrar as 12 primeiras",
+              "fullTitle": "14 - Caso a busca retorne mais de uma receita, renderize as 12 primeiras encontradas, exibindo a imagem e o nome de cada uma Caso mais de uma bebida seja encontrada, mostrar as 12 primeiras",
+              "timedOut": null,
+              "duration": 1056,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/drinks', {\n  onBeforeLoad(win) {\n    win.fetch = fetchMock;\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('gin');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\nginDrinks.drinks.slice(0, 12).forEach((drink, index) => {\n  cy.get(`[data-testid=\"${index}-recipe-card\"]`);\n  cy.get(`[data-testid=\"${index}-card-img\"]`).should('have.attr', 'src').should('include', drink['strDrinkThumb']);\n  cy.get(`[data-testid=\"${index}-card-name\"]`).contains(drink['strDrink']);\n});\ncy.get('[data-testid=\"12-recipe-card\"]').should('not.exist');\ncy.get('[data-testid=\"12-card-img\"]').should('not.exist');\ncy.get('[data-testid=\"12-card-name\"]').should('not.exist');",
+              "err": {},
+              "uuid": "3a205acc-03f3-4e1b-a871-a00fc1e23256",
+              "parentUUID": "bd6c5581-525c-4931-958b-0dd9e00b4f2f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "94398e06-d23b-48b9-8fc5-1a4c9a181b21",
+            "3a205acc-03f3-4e1b-a871-a00fc1e23256"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2119,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "906435a0-5f93-479b-b34e-cdb17ee72130",
+          "title": "15 - Exiba um `alert` caso nenhuma receita seja encontrada",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Caso nenhuma comida seja encontrada o alert deve ser exibido",
+              "fullTitle": "15 - Exiba um `alert` caso nenhuma receita seja encontrada Caso nenhuma comida seja encontrada o alert deve ser exibido",
+              "timedOut": null,
+              "duration": 934,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/meals', {\n  onBeforeLoad(win) {\n    win.fetch = fetchMock;\n    cy.spy(win, 'alert');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('xablau');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('alert').should('be.calledWith', 'Sorry, we haven\\'t found any recipes for these filters.');",
+              "err": {},
+              "uuid": "cccb97ab-c6b5-4a65-9212-cf0b205ef7d1",
+              "parentUUID": "906435a0-5f93-479b-b34e-cdb17ee72130",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Caso nenhuma bebida seja encontrada o alert deve ser exibido",
+              "fullTitle": "15 - Exiba um `alert` caso nenhuma receita seja encontrada Caso nenhuma bebida seja encontrada o alert deve ser exibido",
+              "timedOut": null,
+              "duration": 845,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000/drinks', {\n  onBeforeLoad(win) {\n    win.fetch = fetchMock;\n    cy.spy(win, 'alert');\n  }\n});\ncy.get('[data-testid=\"search-top-btn\"]').click();\ncy.get('[data-testid=\"name-search-radio\"]').click();\ncy.get('[data-testid=\"search-input\"]').type('xablau');\ncy.get('[data-testid=\"exec-search-btn\"]').click();\ncy.window().its('alert').should('be.calledWith', 'Sorry, we haven\\'t found any recipes for these filters.');",
+              "err": {},
+              "uuid": "3ade223c-287c-4869-975f-1d2838e5d2a2",
+              "parentUUID": "906435a0-5f93-479b-b34e-cdb17ee72130",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verifica a cobertura de 90% do Componente SearchBar",
+              "fullTitle": "15 - Exiba um `alert` caso nenhuma receita seja encontrada Verifica a cobertura de 90% do Componente SearchBar",
+              "timedOut": null,
+              "duration": 6639,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('getCoverage', getId()).its('SearchBar.functions.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);\ncy.task('getCoverage', getId()).its('SearchBar.lines.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);\ncy.task('getCoverage', getId()).its('SearchBar.branches.pct', {\n  timeout: 0\n}).should('be.gte', 90.00);",
+              "err": {
+                "message": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> stderr maxBuffer length exceeded\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('getCoverage')` failed with the following error:\n\n> stderr maxBuffer length exceeded\n\nhttps://on.cypress.io/api/task\n    at <unknown> (http://localhost:3000/__cypress/runner/cypress_runner.js:145912:78)\n    at tryCatcher (http://localhost:3000/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (http://localhost:3000/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (http://localhost:3000/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (http://localhost:3000/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (http://localhost:3000/__cypress/runner/cypress_runner.js:9431:18)\n    at _drainQueueStep (http://localhost:3000/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (http://localhost:3000/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (http://localhost:3000/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./cypress/e2e/10-15.header_search_bar.cy.js:286:7)\n\nFrom Node.js Internals:\n  RangeError: stderr maxBuffer length exceeded\n  RangeError [ERR_CHILD_PROCESS_STDIO_MAXBUFFER]: stderr maxBuffer length exceeded\n      at new NodeError (node:internal/errors:387:5)\n      at Socket.onChildStderr (node:child_process:497:14)\n      at Socket.emit (node:events:513:28)\n      at Socket.emit (node:domain:489:12)\n      at addChunk (node:internal/streams/readable:315:12)\n      at readableAddChunk (node:internal/streams/readable:285:11)\n      at Socket.Readable.push (node:internal/streams/readable:228:10)\n      at Pipe.onStreamRead (node:internal/stream_base_commons:190:23)",
+                "diff": null
+              },
+              "uuid": "80a29cbc-0690-489c-bfe6-a8f3e28c68f5",
+              "parentUUID": "906435a0-5f93-479b-b34e-cdb17ee72130",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cccb97ab-c6b5-4a65-9212-cf0b205ef7d1",
+            "3ade223c-287c-4869-975f-1d2838e5d2a2"
+          ],
+          "failures": [
+            "80a29cbc-0690-489c-bfe6-a8f3e28c68f5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8418,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
