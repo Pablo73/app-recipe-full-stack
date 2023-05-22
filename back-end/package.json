@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "tsnd --watch \"./src/**\" --transpile-only ./src/server.ts",
     "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -40,12 +41,12 @@
     "sinon": "13.0.1",
     "ts-node": "10.7.0",
     "ts-node-dev": "1.1.8",
-    "typescript": "4.4.4"
+    "typescript": "^4.4.4"
   },
   "dependencies": {
     "bcryptjs": "2.4.3",
     "cors": "2.8.5",
-    "express": "4.17.1",
+    "express": "^4.17.1",
     "express-async-errors": "3.1.1",
     "jest": "27.4.3",
     "jsonwebtoken": "8.5.1",

@@ -2,7 +2,7 @@ version: '3.9'
 services:
   frontend:
     container_name: app_recipe_frontend
-    build: ./fron-tend
+    build: ./front-end
     ports:
       - 3000:3000
     working_dir: /app-front-end
