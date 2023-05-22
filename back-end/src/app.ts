@@ -1,5 +1,5 @@
 import * as express from 'express';
-import errorMiddleware from './src/middlewares/errorMiddleware';
+import errorMiddleware from './middlewares/errorMiddleware';
 
 
 class App {
