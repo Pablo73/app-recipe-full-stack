@@ -12,7 +12,7 @@ module.exports = {
       nameArea: {
         type: Sequelize.STRING,
         allowNull: false,
-        field: 'name_area'
+        field: 'name_area',
       }
     });
   },
