@@ -2,22 +2,22 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('areas', {
+    await queryInterface.createTable('measures', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nameArea: {
+      nameMeasure: {
         type: Sequelize.STRING,
         allowNull: false,
-        field: 'name_area'
+        field: 'name_measure'
       }
     });
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('areas');
+    await queryInterface.dropTable('measures');
   }
 };
