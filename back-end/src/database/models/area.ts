@@ -3,7 +3,7 @@ import db from '.';
 
 class Area extends Model {
   declare id: number;
-  declare teamName: string;
+  declare nameArea: string;
 }
 
 Area.init({
