@@ -11,7 +11,7 @@ function Recipes() {
   const location = useLocation();
   const isMealsLocation = location.pathname.includes('/meals');
   const categoryUrl = isMealsLocation
-    ? 'http://localhost:3001/meals'
+    ? 'http://localhost:3001/meals/categories'
     : 'https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list';
   const { data: categories, loading } = useFetch(categoryUrl);
   const recipeUrl = isMealsLocation

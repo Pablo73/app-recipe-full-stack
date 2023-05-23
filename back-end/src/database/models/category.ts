@@ -3,14 +3,14 @@ import db from '.';
 
 export interface CategoryAttributes {
   id: number;
-  nameCategory: string;
+  strCategory: string;
 }
 
 export type CategoryCreationAttributes = Omit<CategoryAttributes, 'id'>;
 
 export default class Category extends Model {
   declare id: number;
-  declare nameCategory: string;
+  declare strCategory: string;
 }
 
 Category.init({
@@ -19,7 +19,7 @@ Category.init({
     primaryKey: true,
     autoIncrement: true,
   },
-  nameCategory: {
+  strCategory: {
     type: DataTypes.STRING,
     allowNull: false,
   },  
@@ -27,5 +27,5 @@ Category.init({
   sequelize: db,
   timestamps: false,
   underscored: true,
-  modelName: 'category',
+  modelName: 'categories',
 });

@@ -4,10 +4,10 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
      await queryInterface.bulkInsert('categories', 
      [
-      {name_category: 'Side'},
-      {name_category: 'Seafood'},
-      {name_category: 'Beef'},
-      {name_category: 'Vegetarian'},
+      {str_category: 'Side'},
+      {str_category: 'Seafood'},
+      {str_category: 'Beef'},
+      {str_category: 'Vegetarian'},
     ],
     {}
     );
