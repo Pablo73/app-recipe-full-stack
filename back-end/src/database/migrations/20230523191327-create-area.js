@@ -11,7 +11,8 @@ module.exports = {
       },
       nameArea: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        field: 'name_area'
       }
     });
   },

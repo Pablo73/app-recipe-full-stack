@@ -8,9 +8,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nameCategory: {
+      strCategory: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        field: 'str_category'
       }
     });
   },
