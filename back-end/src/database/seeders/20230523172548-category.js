@@ -4,16 +4,16 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
      await queryInterface.bulkInsert('categories', 
      [
-      {nameCategory: 'Side'},
-      {nameCategory: 'Seafood'},
-      {nameCategory: 'Beef'},
-      {nameCategory: 'Vegetarian'},
+      {name_category: 'Side'},
+      {name_category: 'Seafood'},
+      {name_category: 'Beef'},
+      {name_category: 'Vegetarian'},
     ],
     {}
     );
   
   },
   down: async (queryInterface, Sequelize) => {
-     await queryInterface.bulkDelete('People', null, {});
+     await queryInterface.bulkDelete('categories', null, {});
   }
 };
