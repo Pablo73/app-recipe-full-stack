@@ -1,7 +1,7 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '.';
 import AreaModel from './areaModel';
-import CategoryModel from './categoryModel'
+import CategoryModel from './categoryModel';
 
 export interface MealsAttributes {
   id: number;
@@ -32,7 +32,7 @@ MealsModel.init({
   strArea: {
     type: DataTypes.INTEGER,
     references: {
-      model: 'areas',
+      model: AreaModel,
       key: 'id',
     },
     onDelete: 'CASCADE',
@@ -41,7 +41,7 @@ MealsModel.init({
   strCategory: {
     type: DataTypes.INTEGER,
     references: {
-      model: 'categories',
+      model: CategoryModel,
       key: 'id',
     },
     onDelete: 'CASCADE',
@@ -51,7 +51,7 @@ MealsModel.init({
     type: DataTypes.STRING
   },
   strInstructions: {
-    type: DataTypes.STRING
+    type: DataTypes.TEXT
   },
   strMealThumb: {
     type: DataTypes.STRING
