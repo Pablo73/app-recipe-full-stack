@@ -15,7 +15,7 @@ function Recipes() {
     : 'https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list';
   const { data: categories, loading } = useFetch(categoryUrl);
   const recipeUrl = isMealsLocation
-    ? 'https://www.themealdb.com/api/json/v1/1/search.php?s='
+    ? 'http://localhost:3001/meals/categories?c=All'
     : 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
   const [recipes, setRecipes] = useState(null);
   const { data: apiRecipes } = useFetch(recipeUrl);
