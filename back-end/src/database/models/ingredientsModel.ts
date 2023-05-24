@@ -8,12 +8,12 @@ export interface IngredientsAttributes {
 
 export type IngredientsCreationAttributes = Omit<IngredientsAttributes, 'id'>;
 
-export default class Ingredients extends Model {
+export default class IngredientsModel extends Model {
   declare id: number;
   declare nameIngredient: string;
 }
 
-Ingredients.init({
+IngredientsModel.init({
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,

@@ -8,12 +8,12 @@ export interface MeasureAttributes {
 
 export type MeasureCreationAttributes = Omit<MeasureAttributes, 'id'>;
 
-export default class Measure extends Model {
+export default class MeasureModel extends Model {
     declare id: number;
     declare nameMeasure: string;
 }
 
-Measure.init({
+MeasureModel.init({
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

@@ -8,12 +8,12 @@ export interface CategoryAttributes {
 
 export type CategoryCreationAttributes = Omit<CategoryAttributes, 'id'>;
 
-export default class Category extends Model {
+export default class CategoryModel extends Model {
   declare id: number;
   declare strCategory: string;
 }
 
-Category.init({
+CategoryModel.init({
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -29,3 +29,4 @@ Category.init({
   underscored: true,
   modelName: 'categories',
 });
+
