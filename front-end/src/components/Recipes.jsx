@@ -36,7 +36,7 @@ function Recipes() {
   const filterByCategory = async (filter) => {
     let apiUrl = '';
     if (isMealsLocation) {
-      apiUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${filter}`;
+      apiUrl = `http://localhost:3001/meals/categories?c=${filter}`;
     } else {
       apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${filter}`;
     }
