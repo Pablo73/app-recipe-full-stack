@@ -1,12 +1,12 @@
 import { DataTypes, Model } from 'sequelize';
 import db from '.';
 
-class Area extends Model {
+class AreaModel extends Model {
   declare id: number;
   declare nameArea: string;
 }
 
-Area.init({
+AreaModel.init({
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -23,4 +23,4 @@ Area.init({
   timestamps: false,
 });
 
-export default Area;
+export default AreaModel;

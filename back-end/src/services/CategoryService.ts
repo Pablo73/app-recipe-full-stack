@@ -1,4 +1,4 @@
-import Category from '../database/models/category';
+import Category from '../database/models/categoryModel';
 
 class CategoryService {
   constructor(public model = Category) {}
