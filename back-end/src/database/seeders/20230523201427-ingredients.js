@@ -41,7 +41,6 @@ module.exports = {
       {name_ingredient: 'Flour'},
       {name_ingredient: 'Vegetable Oil'},
     ], {});
-    
   },
 
   down: async (queryInterface, Sequelize) => {

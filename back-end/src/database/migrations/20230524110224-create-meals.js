@@ -33,7 +33,7 @@ module.exports = {
         field: 'str_image_source',
       },
       strInstructions: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         field: 'str_instructions',
       },
       strMealThumb: {
