@@ -21,7 +21,6 @@ MeasureModel.init({
     },
     nameMeasure: {
         type: DataTypes.STRING,
-        allowNull: false,
         unique: true,
     },
 }, {

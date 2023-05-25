@@ -2,23 +2,23 @@ import { Model, DataTypes } from 'sequelize';
 import sequelize from '.';
 import ingredients from './ingredientsModel';
 import measures from './measuresModel'
-import meals from './mealsModel';
+import drinks from './drinksModel';
 
-export interface MealsIngredientsMeasuresModelAttributes {
+export interface DrinksIngredientsMeasuresModelAttributes {
   idIngredients: number;
   idMeals: number;
 }
 
-export default class MealsIngredientsMeasuresModel extends Model {
+export default class DrinksIngredientsMeasuresModel extends Model {
   declare idIngredients: number;
   declare idMeals: number;
 }
 
-MealsIngredientsMeasuresModel.init({
-  idMeals: {
+DrinksIngredientsMeasuresModel.init({
+  idDrinks: {
     type: DataTypes.INTEGER,
     references: {
-      model: meals,
+      model: drinks,
       key: 'id',
     },
     onDelete: 'CASCADE',
@@ -46,5 +46,5 @@ MealsIngredientsMeasuresModel.init({
   sequelize,
   timestamps: false,
   underscored: true,
-  modelName: 'mealsIngredientsMeasures',
+  modelName: 'drinksIngredientsMeasures',
 });

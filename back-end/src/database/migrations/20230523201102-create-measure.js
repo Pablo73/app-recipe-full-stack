@@ -11,7 +11,6 @@ module.exports = {
       },
       nameMeasure: {
         type: Sequelize.STRING,
-        allowNull: false,
         field: 'name_measure'
       }
     });
