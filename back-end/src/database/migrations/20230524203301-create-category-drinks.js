@@ -1,22 +1,21 @@
 'use strict';
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('measures', {
+    await queryInterface.createTable('category_drinks', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nameMeasure: {
+      nameCategoryDrinks: {
         type: Sequelize.STRING,
-        field: 'name_measure'
+        allowNull: false,
+        field: 'name_category_drinks'
       }
     });
   },
-
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('measures');
+    await queryInterface.dropTable('category_drinks');
   }
 };

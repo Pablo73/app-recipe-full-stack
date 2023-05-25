@@ -5,7 +5,14 @@ import CategoryModel from './categoryModel';
 
 export interface MealsAttributes {
   id: number;
-  strCategory: string;
+  strArea: number;
+  strCategory: number;
+  strImageSource: string;
+  strInstructions: string;
+  strMealThumb: string;
+  strMeal: string;
+  strTags: string;
+  strYoutube: string;
 }
 
 export type MealsCreationAttributes = Omit<MealsAttributes, 'id'>;
