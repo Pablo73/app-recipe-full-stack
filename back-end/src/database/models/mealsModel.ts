@@ -76,7 +76,7 @@ MealsModel.init({
   sequelize,
   timestamps: false,
   underscored: true,
-  modelName: 'categories',
+  modelName: 'meals',
 });
 
 AreaModel.hasMany(MealsModel, {
