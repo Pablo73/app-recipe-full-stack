@@ -8,5 +8,6 @@ const mealController = new MealController();
 
 mealsRouter.get('/categories', categoryController.getCategory);
 mealsRouter.get('/search', mealController.searchMeals);
+mealsRouter.get('/filter', mealController.filterMeals);
 
 export default mealsRouter;

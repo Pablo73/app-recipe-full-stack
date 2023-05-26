@@ -1,5 +1,7 @@
-import { Op } from 'sequelize';
+import { Op, QueryTypes } from 'sequelize';
 import MealsModel from '../database/models/mealsModel';
+import sequelize from '../database/models';
+import filterByIngredientQuery from '../utils/queries';
 
 class MealService {
   constructor(public model = MealsModel) {}
@@ -17,6 +19,17 @@ class MealService {
         'strMealThumb',
       ],
     });
+    return meals;
+  }
+
+  public async filterMeals(ingredientName: string) {
+    const meals = await sequelize.query(filterByIngredientQuery, { 
+      type: QueryTypes.SELECT,
+      replacements: { ingredientName } 
+    });
+
+    console.log(meals);
+
     return meals;
   }
 }

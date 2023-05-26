@@ -18,9 +18,9 @@ function RecipesProvider({ children }) {
     setIsLoading(true);
     if (location.pathname.includes('meals')) {
       const mealsApi = {
-        ingredient: `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchTerm}`,
-        name: `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`,
-        firstLetter: `https://www.themealdb.com/api/json/v1/1/search.php?f=${searchTerm}`,
+        ingredient: `http://localhost:3001/meals/filter?i=${searchTerm}`,
+        name: `http://localhost:3001/meals/search?s=${searchTerm}`,
+        firstLetter: `http://localhost:3001/meals/search?f=${searchTerm}`,
       };
       return mealsApi[searchType];
     }
