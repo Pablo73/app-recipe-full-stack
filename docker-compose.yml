@@ -40,6 +40,7 @@ services:
       - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=${DB_PASS}
+      - MYSQL_DATABASE=RECIPES_APP
     restart: 'always'
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
