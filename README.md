@@ -7,27 +7,12 @@ O aplicativo de receitas é uma plataforma que permite aos usuários descobrir e
 ## Configuração
 Siga as etapas abaixo para configurar e executar o projeto localmente.
 
-<details>
-<summary><strong> ⚠️ Configurações mínimas para execução do projeto</strong></summary><br />
-
-Na sua máquina você deve ter:
+### ⚠️ Configurações mínimas na sua máquina
 
  - Node versão 16
  - Docker
  - Docker-compose versão >=1.29.2
 
-➡️ O `node` deve ter versão igual ou superior à `16.14.0 LTS`:
-  - Para instalar o nvm, [acesse esse link](https://github.com/nvm-sh/nvm#installing-and-updating);
-  - Rode os comandos abaixo para instalar a versão correta de `node` e usá-la:
-    - `nvm install 16.14 --lts`
-    - `nvm use 16.14`
-    - `nvm alias default 16.14`
-
-➡️ O`docker-compose` deve ter versão igual ou superior à`ˆ1.29.2`:
-  * Verifique no Course no dia `Orquestrando Containers com Docker Compose` como instalar corretamente.
-  * Caso necessário, acesse o [link da documentação oficial com passos para desinstalar](https://docs.docker.com/compose/install/#uninstallation) a versão atualmente instalada.
-
-</details>
 
 ### Instalação
 Clone o repositório:
