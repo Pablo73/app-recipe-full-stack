@@ -20,6 +20,22 @@ Instale as dependências:
 ```bash
 npm install
 ```
+Defina as variáveis de ambiente:
+
+```bash
+cp .env.example .env
+```
+
+## Frontend
+
+Acesse o diretório do frontend:
+```bash
+cd app-recipe-full-stack/frontend
+```
+Inicie o servidor:
+```bash
+npm start
+```
 
 ## Features
 
