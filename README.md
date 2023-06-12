@@ -7,6 +7,13 @@ O aplicativo de receitas é uma plataforma que permite aos usuários descobrir e
 ## Configuração
 Siga as etapas abaixo para configurar e executar o projeto localmente.
 
+### ⚠️ Configurações mínimas na sua máquina
+
+ - Node versão 16
+ - Docker
+ - Docker-compose versão >=1.29.2
+
+
 ### Instalação
 Clone o repositório:
 
@@ -19,6 +26,27 @@ Instale as dependências:
 
 ```bash
 npm install
+```
+Defina as variáveis de ambiente:
+
+```bash
+cp .env.example .env
+```
+
+Inicie os contêineres do Docker usando o Docker Compose:
+```bash
+docker-compose up -d
+```
+
+## Frontend
+
+Acesse o diretório do frontend:
+```bash
+cd app-recipe-full-stack/frontend
+```
+Inicie o servidor:
+```bash
+npm start
 ```
 
 ## Features
