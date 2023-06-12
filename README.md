@@ -23,7 +23,7 @@ npm install
 
 ## Features
 
-- **SQL database**: [MtSQL](https://www.mysql.com/) object data modeling using [MySQL Workbench](https://www.mysql.com/products/workbench/)
+- **SQL database**: [MySQL](https://www.mysql.com/) object data modeling using [MySQL Workbench](https://www.mysql.com/products/workbench/)
 - **Testing**: unit and integration tests using [Jest](https://jestjs.io)
 - **Docker support**
 - **Linting**: with [ESLint](https://eslint.org) and [Prettier](https://prettier.io)
