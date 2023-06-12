@@ -48,6 +48,11 @@ Defina as variáveis de ambiente:
 cp .env.example .env
 ```
 
+Inicie os contêineres do Docker usando o Docker Compose:
+```bash
+docker-compose up -d
+```
+
 ## Frontend
 
 Acesse o diretório do frontend:
