@@ -1,8 +1,25 @@
-# Aplicativo de Receitas - Documento de Arquitetura e Tecnologias
+# App Recipe Full Stack
 
 Este documento descreve a arquitetura e as tecnologias utilizadas no desenvolvimento de um aplicativo de receitas. O aplicativo é projetado para permitir aos usuários explorar, pesquisar e compartilhar receitas culinárias. A parte frontend do aplicativo é construída com tecnologias como React, CSS e JavaScript, enquanto o backend é construído com Sequelize e Express.
 
 O aplicativo de receitas é uma plataforma que permite aos usuários descobrir e compartilhar receitas culinárias. Os usuários podem pesquisar receitas por ingredientes, categorias ou palavras-chave, visualizar os detalhes da receita, seguir instruções passo a passo e interagir com outros usuários, deixando comentários e avaliações nas receitas.
+
+## Configuração
+Siga as etapas abaixo para configurar e executar o projeto localmente.
+
+### Instalação
+Clone o repositório:
+
+```bash
+git clone git@github.com:Pablo73/app-recipe-full-stack.git
+cd app-recipe-full-stack
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
 
 ## Arquitetura do Aplicativo:
 
